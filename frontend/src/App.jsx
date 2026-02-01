@@ -16,7 +16,7 @@ function App() {
 
 		try {
 			const response = await fetch(
-				"http://127.0.0.1:8000/api/optimize-order/",
+				"https://smartprocurement-2.onrender.com/api/optimize-order/",
 				{
 					method: "POST",
 					headers: {
