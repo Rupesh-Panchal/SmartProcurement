@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-yyd9#70brs6tih708iui8i$$4qtb_!$y6k7r!!74&839_5q^#-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "smartprocurement-1.onrender.com",
+    ".onrender.com",
+]
+
 
 
 # Application definition
