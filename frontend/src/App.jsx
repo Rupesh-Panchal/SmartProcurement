@@ -16,7 +16,7 @@ function App() {
 
 		try {
 			const response = await fetch(
-				"https://smartprocurement-2.onrender.com/api/optimize-order/",
+				`${import.meta.env.VITE_API_URL}/api/optimize-order/`,
 				{
 					method: "POST",
 					headers: {
@@ -78,22 +78,37 @@ function App() {
 
 				{result && (
 					<div className="result-card">
-						<h3>Result</h3>
+						<h3>Calculation Result</h3>
+
 						<p>
 							<strong>Raw Tubes Required:</strong>{" "}
 							{result.raw_tubes_required}
 						</p>
-						<p>
-							<strong>Vendor:</strong> {result.vendor.name}
-						</p>
-						<p>
-							<strong>Total Cost:</strong> ₹
-							{result.vendor.total_cost}
-						</p>
-						<p>
-							<strong>Delivery Time:</strong>{" "}
-							{result.vendor.delivery_days} days
-						</p>
+
+						<h4 className="section-title">Vendor Comparison</h4>
+
+						{result.vendors.map((vendor) => (
+							<div
+								key={vendor.name}
+								className={`vendor-card ${
+									vendor.is_best ? "best-vendor" : ""
+								}`}
+							>
+								<div className="vendor-header">
+									<strong>{vendor.name}</strong>
+									{vendor.is_best && (
+										<span className="badge">
+											Best Option
+										</span>
+									)}
+								</div>
+
+								<p>Total Cost: ₹{vendor.total_cost}</p>
+								<p>
+									Delivery Time: {vendor.delivery_days} days
+								</p>
+							</div>
+						))}
 					</div>
 				)}
 			</div>

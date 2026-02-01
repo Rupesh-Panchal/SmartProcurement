@@ -6,7 +6,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: white;
+	background: #f2f4f8;
 }
 
 /* Center container */
@@ -22,10 +22,10 @@ body {
 .card {
 	background: #ffffff;
 	width: 100%;
-	max-width: 450px;
+	max-width: 500px;
 	padding: 30px;
 	border-radius: 14px;
-	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 	animation: fadeIn 0.6s ease-in-out;
 }
 
@@ -56,9 +56,6 @@ input {
 	border-radius: 8px;
 	border: 1px solid #ccc;
 	font-size: 14px;
-	transition:
-		border-color 0.3s,
-		box-shadow 0.3s;
 }
 
 input:focus {
@@ -78,14 +75,11 @@ button {
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
-	transition:
-		transform 0.2s,
-		box-shadow 0.2s;
 }
 
-button:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+button:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
 }
 
 /* Error */
@@ -108,22 +102,41 @@ button:hover {
 	border-left: 5px solid #667eea;
 }
 
-.result-card h3 {
-	margin-top: 0;
-	margin-bottom: 15px;
+.section-title {
+	margin-top: 20px;
+	margin-bottom: 10px;
 	color: #333;
-	font-size: 18px;
+	font-size: 16px;
 }
 
-/* Result rows */
-.result-card p {
-	margin: 8px 0;
-	font-size: 14px;
-	color: #444;
+/* Vendor cards */
+.vendor-card {
+	background: #ffffff;
+	padding: 12px;
+	margin-bottom: 12px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
 }
 
-.result-card strong {
-	color: #222;
+.vendor-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.badge {
+	background: #2e7d32;
+	color: #fff;
+	font-size: 12px;
+	padding: 4px 8px;
+	border-radius: 6px;
+}
+
+/* Best vendor highlight */
+.best-vendor {
+	border: 2px solid #2e7d32;
+	background: #eaffea;
 }
 
 /* Animation */
