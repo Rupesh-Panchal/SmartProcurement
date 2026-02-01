@@ -9,7 +9,19 @@ body {
 	background: #f2f4f8;
 }
 
-/* Center container */
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+
 .app-container {
 	min-height: 100vh;
 	width: 100vw;
@@ -54,6 +66,8 @@ input {
 	width: 100%;
 	padding: 12px;
 	border-radius: 8px;
+	background-color: #ffffff;
+	color: #222222;
 	border: 1px solid #ccc;
 	font-size: 14px;
 }
